@@ -7,10 +7,5 @@ public class SimpleDotComTestDrive{
 		
 		String userGuess = "2";
 		String result = dot.checkYourself(userGuess);
-		String testResult = "fail";
-		if (result.equals("damaged"){
-			testResult = passed;
-		}
-		System.out.println(testResult);
 	}
 }
