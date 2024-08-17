@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class DotComBust{
 	private GameHelper helper = new GameHelper();
 	private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
@@ -10,11 +12,11 @@ public class DotComBust{
 		two.setName("eToys.com");
 		DotCom three = new DotCom();
 		three.setName("Go2.com");
-		dotComList.add(one);
-		dotComList.add(two);
-		dotComList.add(three);
+		dotComsList.add(one);
+		dotComsList.add(two);
+		dotComsList.add(three);
 
-		System.out.pritnln("You'r goal is to hit 3 sites");
+		System.out.println("You'r goal is to hit 3 sites");
 		System.out.println("Pets.com, eToys.com, Go2.com");
 		System.out.println("You should have a as little tries as posible");
 
@@ -26,8 +28,8 @@ public class DotComBust{
 	}
 	
 	private void startPlaying(){
-		while (!dotComList.isEmpty()) {
-			String userGuess = helper.hetUserInput("Try to hit the sites: ");
+		while (!dotComsList.isEmpty()) {
+			String userGuess = helper.getUserInput("Try to hit the sites: ");
 			checkUserGuess(userGuess);
 		}
 		finishGame();
@@ -36,12 +38,12 @@ public class DotComBust{
 	private void checkUserGuess(String userGuess){
 		numOfGuesses++;
 		String result = "Missed";
-		for (DotCom dotComToTest : dotComList){
+		for (DotCom dotComToTest : dotComsList){
 			result = dotComToTest.checkYourself(userGuess);
 			if (result.equals("Damaged")){
 				break;
 			}
-			if (result.equals("Hit"){
+			if (result.equals("Hit")){
 				dotComsList.remove(dotComToTest);
 				break;
 			}

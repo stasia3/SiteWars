@@ -1,13 +1,18 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class DotCom{
 	private ArrayList<String> locationCells;
+	private String name;
 
 	public void setLocationCells (ArrayList<String> loc){
 		locationCells = loc;
 	}
 
-	public String checkYourself (String userInput{
+	public void setName (String n){
+		name = n;
+	}	
+
+	public String checkYourself (String userInput){
 		String result = "Missed";
 		int index = locationCells.indexOf(userInput);
 
@@ -16,6 +21,7 @@ public class DotCom{
 
 			if (locationCells.isEmpty()){
 				result = "Hit";
+				System.out.println("You sunk " + name);
 			} else {
 				result = "Demaged";
 			}
